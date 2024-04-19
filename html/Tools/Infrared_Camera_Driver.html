@@ -1,0 +1,476 @@
+<style>
+  #myDiv {
+    padding-top: 5%;
+		padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5%;
+	}
+  .code-box {
+    width: 100%; /* 设置固定宽度 */
+    height: auto; /* 自适应高度 */
+    border: 1px solid #ccc;
+    border-radius: 0%;
+    background-color: #f1f1f1;
+    padding: 1%;
+    overflow: auto; /* 添加滚动条以适应内容过长的情况 */
+
+  }
+</style>
+
+<body>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="M3EDS-dataset"/>
+  <meta name="keywords" content="M3EDS-dataset"/>
+  <meta name="author" content="hsl"/>
+  <title>M3EDS-dataset
+  </title>
+  <link rel="shortcut icon" href="https://erglab.github.io/M3EDS/picture/icon.png"/>
+  <link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/plugins.css"/>
+  <link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/style.css"/>
+  <link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/pink.css"/>
+  <nav id="sticky-navbar" class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light transparent navbar-clone fixed">
+    <div class="container">
+      <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+        <div class="navbar-brand w-100">
+          <a href="https://erglab.github.io/M3EDS/index.html">
+            <img src="https://erglab.github.io/M3EDS/picture/icon.png" alt="" />
+          </a>
+        </div>
+        <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+          <div class="offcanvas-header d-lg-none">
+            <h3 class="text-white fs-30 mb-0">M3EDS</h3>
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+          </div>
+          <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="https://erglab.github.io/M3EDS/index.html" class="nav-link">Home</a></li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                <ul class="dropdown-menu">                      
+                  <li class="nav-item">
+                    <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                  </li>
+
+                </ul>
+              </li>
+            </ul><!-- /.navbar-nav -->
+          </div><!-- /.offcanvas-body -->
+        </div><!-- /.navbar-collapse -->
+        <div class="navbar-other w-100 d-flex ms-auto">
+          <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <li class="nav-item d-lg-none"><button class="hamburger offcanvas-nav-btn"><span></span></button></li>
+          </ul>
+        </div>
+      </div><!-- /.navbar-collapse-wrapper -->
+    </div><!-- /.container -->
+  </nav>
+  <!--导航栏-->
+  <div class="content-wrapper">
+    <header class="wrapper bg-gray">
+      <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light">
+        <div class="container">
+          <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+            <div class="navbar-brand w-100">
+              <a href=""><img src="https://erglab.github.io/M3EDS/picture/icon.png" alt=""/></a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <h3 class="text-white fs-30 mb-0">
+                </h3>
+                <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                    <ul class="dropdown-menu">
+                      
+                      <li class="nav-item">
+                        <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>  
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.navbar-collapse-wrapper -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+
+
+    <section class="wrapper bg-gray">
+      <div id="myDiv">
+        <h1 align="center">Infrared camera drive</h1>
+        <h3 align="center"> <a href="https://github.com/Huang-shulei">Shulei Huang</a></h3>
+        <h2>1 Environment configuration</h2>
+        <h3>1.1 Download package</h3>
+        <div class="code-box">
+          <code>
+            (1)mkdirs catkin_ws/src<br>
+            (2)cd catkin_ws/src<br>
+            (3)git clone https://github.com/ERGlab/infrared_camera_ros.git
+          </code>
+        </div>
+
+        <h3>1.2 MVS Client installation</h3>
+        <p>
+          (1)Download MVS Client. <a href="https://1drv.ms/u/s!Au764psZBucRgW4Apz3HnCphHr3K?e=U0Jlys">download link</a>.<br>
+          (2)Open this compressed package and install a suitable edition for your computer
+        </p>
+        <figure style="text-align: center;">
+          <img style = "width: 70%" src="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver_pic/MVS_client-1.png" alt="Image description">
+          <figcaption>Fig. 2. MVS_STD_GML_V2.1.2_221208.zip</figcaption>
+        </figure>
+        <div class="code-box">
+          <code>
+            sudo dpkg install -i MVS-2.1.2_x86_64_20221208.deb (for example)
+          </code>
+        </div>
+        <figure style="text-align: center;">
+          <img style = "width: 70%" src="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver_pic/MVS_client-2.png" alt="Image description">
+          <figcaption>Fig. 3. Install MVS_client</figcaption>
+        </figure>
+
+        <h3>1.3 Camera ethernet ip configuration</h3>
+        <p>
+          Set the Camera Ethernet IP to "manual" and refer to the following figure for the configuration of the IP address.
+        </p>
+        <figure style="text-align: center;">
+          <img style = "width: 70%" src="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver_pic/IP.png" alt="Image description">
+          <figcaption>Fig. 4. Camera ethernet IP configuration</figcaption>
+        </figure>
+
+
+        <h2>2 Compile </h2>
+        <div class="code-box">
+          <code>
+            (1)cd ~/catkin_ws<br>
+            (2)catkin_make<br>
+            (3)source devel/setup.bash
+          </code>
+        </div>
+
+        <h2>3 Run </h2>
+        <div class="code-box">
+          <code>
+            (1)roslaunch hikrobot_infrared_camera infrared_camera.launch<br>
+            (2)roslaunch hikrobot_infrared_camera infrared_camera_rviz.launch (Visualization)
+          </code>
+        </div>
+
+        <figure style="text-align: center;">
+          <img style = "width: 70%" src="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver_pic/topic.png" alt="Image description">
+          <figcaption>Fig. 5. Ros_topic of this package</figcaption>
+        </figure>
+        
+        <figure style="text-align: center;">
+          <img style = "width: 70%" src="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver_pic/rviz.png" alt="Image description">
+          <figcaption>Fig. 6. Visualization of infrared camera</figcaption>
+        </figure>
+
+
+
+      </div>
+    </section>
+
+
+  </div>
+  
+
+
+  <script src="https://erglab.github.io/M3EDS/js/plugins.js"></script>
+  <script src="https://erglab.github.io/M3EDS/js/theme.js"></script>
+</body>

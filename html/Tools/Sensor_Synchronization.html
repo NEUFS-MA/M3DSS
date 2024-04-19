@@ -1,0 +1,633 @@
+<style>
+#myDiv {
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5%;
+}
+
+p {
+  text-align: justify;
+    text-align-last: left;
+  text-justify: inter-word;
+}
+
+.report-img {
+    width: 60%;
+    height: auto;
+}
+
+.code-box {
+    width: 100%; /* 设置固定宽度 */
+    height: auto; /* 自适应高度 */
+    border: 1px solid #ccc;
+    border-radius: 0%;
+    background-color: #f1f1f1;
+    padding: 1%;
+    overflow: auto; /* 添加滚动条以适应内容过长的情况 */
+
+  }
+</style>
+
+<body>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="M3EDS-dataset"/>
+<meta name="keywords" content="M3EDS-dataset"/>
+<meta name="author" content="hsl"/>
+<title>M3EDS-dataset
+</title>
+<link rel="shortcut icon" href="https://erglab.github.io/M3EDS/picture/icon.png"/>
+<link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/plugins.css"/>
+<link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/style.css"/>
+<link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/pink.css"/>
+<nav id="sticky-navbar" class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light transparent navbar-clone fixed">
+  <div class="container">
+    <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+      <div class="navbar-brand w-100">
+        <a href="https://erglab.github.io/M3EDS/index.html">
+          <img src="https://erglab.github.io/M3EDS/picture/icon.png" alt="" />
+        </a>
+      </div>
+      <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+        <div class="offcanvas-header d-lg-none">
+          <h3 class="text-white fs-30 mb-0">M3EDS</h3>
+          <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+        </div>
+        <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="https://erglab.github.io/M3EDS/index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+              <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                </li>
+                <li class="nav-item">
+                  
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+              <ul class="dropdown-menu">                      
+                <li class="nav-item">
+                  <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                </li>
+              </ul>
+            </li>
+          </ul><!-- /.navbar-nav -->
+        </div><!-- /.offcanvas-body -->
+      </div><!-- /.navbar-collapse -->
+      <div class="navbar-other w-100 d-flex ms-auto">
+        <ul class="navbar-nav flex-row align-items-center ms-auto">
+          <li class="nav-item d-lg-none"><button class="hamburger offcanvas-nav-btn"><span></span></button></li>
+        </ul>
+      </div>
+    </div><!-- /.navbar-collapse-wrapper -->
+  </div><!-- /.container -->
+</nav>
+<!--导航栏-->
+<div class="content-wrapper">
+  <header class="wrapper bg-gray">
+    <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light">
+      <div class="container">
+        <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+          <div class="navbar-brand w-100">
+            <a href=""><img src="https://erglab.github.io/M3EDS/picture/icon.png" alt=""/></a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-header d-lg-none">
+              <h3 class="text-white fs-30 mb-0">
+              </h3>
+              <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+            </div>
+            <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="https://erglab.github.io/M3EDS/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                    </li>
+                    <li class="nav-item">
+                      
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                  <ul class="dropdown-menu">
+
+                    <li class="nav-item">
+                      <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.navbar-other -->
+        </div>
+        <!-- /.navbar-collapse-wrapper -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <!-- /.navbar -->
+  </header>
+  <!-- /header -->
+
+
+  <section class="wrapper bg-gray">
+    <div id="myDiv">
+      <!--在此插入内容-->
+      <h1 align="center">Sensors Synchronization</h1>
+      <h6 align="center"> <a href="https://kwanwaipang.github.io/">Weipeng Guan</a>, <a href="https://darrenwong.github.io/">Feng Huang</a>, <a href="https://github.com/cpymaple">Peiyu Chen</a></h6>
+      <h2>1. Abstract</h2>
+      <p>
+        In this report, we will provide a brief overview of our sensor synchronization process.
+        This primarily involves synchronizing event cameras, synchronizing different types of sensors, and synchronizing onboard computers across multiple platforms.
+      </p>
+
+      <h2>2. The Synchronization of Event Cameras</h2>
+      <!-- <h3>2.1 The Synchronization of Event Cameras</h3> -->
+      <p>
+        The event camera has an additional synchronization interface, called as "sync connectors", as shown in the figure below. (Using DAVIS346 as example reference to <a href="https://inivation.com/wp-content/uploads/2019/08/DAVIS346.pdf">Link</a>,
+        same as DVXplorer <a href="https://inivation.com/wp-content/uploads/2023/03/DVXplorer.pdf">Link</a>).
+      </p>
+
+      <!-- <figure align="center">
+        <img class="report-img" src="Sensor_Synchronization/syns_connectors.png" alt="Image description">
+        <figcaption>Fig. 1. Sync connector pinouts on DAVIS 346</figcaption>
+      </figure> -->
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Sensor_Synchronization/syns_connectors.png" alt="Image description">
+        <figcaption>Fig. 1. Sync connector pinouts on DAVIS 346</figcaption>
+      </figure>
+
+      <p>
+        The synchronization connectors are HiRose HR10A-7R-4P (male, SYNC OUTPUT) and HR10A-7R-4S (female, SYNC INPUT) connectors. Cables should use the matching connectors HR10A-7P-4S (female) and HR10A-7P-4P (male).
+        Please note that to keep full electrical isolation between different cameras, the cable should not be shielded, or if it is, the shield should not connect one end of the cable to the other.
+        Input signals can be 3.3V or 5V, depending on the VDD_IN supplied externally, output signals are 5V, as is VDD_OUT.
+        If you chain cameras together for synchronization, the clock and VDD will be 5V, for example.
+      </p>
+<!--        <br>-->
+      <p>
+        Therefore, utilizing this sync connector, we connected four event cameras together (two DAVIS346 and two DVXplorer) as shown in the diagram below.
+        Additionally, we replaced the event camera ROS driver <a href="https://gitlab.com/inivation/dv/dv-ros">Code</a> provided by Invitation Company with our own driver <a href="https://github.com/arclab-hku/Event_based_VO-VIO-SLAM/tree/main/driver_code/dv-ros-master">Code</a>.
+      </p>
+
+      <!-- <figure align="center">
+        <img class="report-img" src="Sensor_Synchronization/four_event_camera.jpg" alt="Image description">
+        <figcaption>Fig. 2. Sync connector pinouts on DAVIS 346 </figcaption>
+      </figure> -->
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Sensor_Synchronization/four_event_camera.jpg" alt="Image description">
+        <figcaption>Fig. 2. Sync connector pinouts on DAVIS 346</figcaption>
+      </figure>
+
+      <p>
+        There are two key parameter in the driver code of event camera for synchronization, <mark>syncDevices</mark> and <mark> waitForSync </mark>
+      </p>
+
+      <div class="code-box">
+        <code> &lt;rosparam param=&quot;syncDevices&quot;&gt;["series number of your event camera"]&lt;/rosparam&gt; </code>
+      </div>
+
+      <p>
+      A list of other cameras connected with synchronization cable to this camera, If this list is empty, the camera node will not properly synchronize them.
+      </p>
+
+      <div class="code-box">
+        <code>&lt;param name=&quot;waitForSync&quot; value=&quot;true&quot;/&gt;</code>
+      </div>
+
+      <p>
+        This means that it does not publish data until synchronization is complete.
+        The launch file of our event camera synchronization can be seen in <a href="https://github.com/arclab-hku/Event_based_VO-VIO-SLAM/tree/main/driver_code/dv-ros-master/dv_ros_visualization/launch">Link</a>.
+        We use an event camera as "master" while the other three event cameras is waiting on list.
+        Through the series number of the event camera to avoid mis-match.
+      </p>
+
+
+      <!-- <iframe align="center" src="//player.bilibili.com/player.html?aid=869034367&bvid=BV1xV4y1B7qF&cid=1141562890&page=1" frameborder="0" allowfullscreen" > </iframe> -->
+      <iframe src="//player.bilibili.com/player.html?aid=869034367&bvid=BV1xV4y1B7qF&cid=1141562890&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="display: block; margin: 0 auto; width: 60%; height: 40vh;"></iframe>
+
+
+      <p>
+        Furthermore, to validate the synchronization effect, we simultaneously started four event cameras, recorded a rosbag, and then outputted the rostopic, as shown in the figure below.
+        It can be observed that "/DAVIS346 left/events: 4482", "/DAVIS346 right/events: 4482", "/DVXplorer left/events: 4483", and "/DVXplorer right/events: 4480".
+        The data volume from all four event cameras is similar.
+        Additionally, from the video demo, it can be seen that when the event cameras are started, there is a waiting period until all of them have finished initializing.
+        Moreover, the difference in data volume between "/DAVIS346 left/events" and "/DAVIS346 left/imu" is only 1, and both are recorded at 1000Hz.
+      </p>
+      <!-- <figure align="center">
+        <img class="report-img" src="Sensor_Synchronization/number_of_event_after_synchronization.png" alt="Image description">
+        <figcaption>Fig. 3. The rosbag information for the four event cameras </figcaption>
+      </figure> -->
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Sensor_Synchronization/number_of_event_after_synchronization.png" alt="Image description">
+        <figcaption>Fig. 3. The rosbag information for the four event cameras</figcaption>
+      </figure>
+
+
+      <h2>3. The Synchronization of Multi Sensors</h2>
+
+      <!-- <figure align="center">
+        <img  style="width: 100%" src="Sensor_Synchronization/structure_of_syns.png" alt="Image description">
+        <figcaption>Fig. 4. The Structure of Our Sensors Synchronization </figcaption>
+      </figure> -->
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Sensor_Synchronization/structure_of_syns.png" alt="Image description">
+        <figcaption>Fig. 4. The Structure of Our Sensors Synchronization</figcaption>
+      </figure>
+
+      <h3>3.1. The Synchronization of Two Onboard Computer</h3>
+      <p>
+        Firstly, we install the PTP.
+      </p>
+
+      <div class="code-box">
+        <code>sudo apt install ptpd</code>
+      </div>
+
+      <p>
+      Choose a machine to serve as the master node and initiate the following on it (where eth0 is the selected network interface for synchronization, please note that it requires the connected switch to support the PTP protocol):
+      </p>
+
+      <div class="code-box">
+        <code>sudo ptpd -M -i eth0</code>
+      </div>
+
+      <p>
+      On the remaining slave nodes, initiate the following:
+      </p>
+
+      <div class="code-box">
+        <code>sudo ptpd -g -i eth0</code>
+      </div>
+
+      <p>
+      If the "-C" parameter is added to both the master and slave, it will run in the foreground and print the output. For example, on the master side:
+      </p>
+
+      <div class="code-box">
+        <code>sudo ptpd -g -i eth0 -C</code>
+      </div>
+      
+      <br>
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Sensor_Synchronization/ptpd_syns.png" alt="Image description">
+        <figcaption>The screenshot of the PTPD</figcaption>
+      </figure>
+
+      <h3>3.2 The Synchronization of Event Camera and Standard Camera </h3>
+      <p>
+        After synchronizing the clock cycles between two onboard computers, we set the image publishing frequency of DAVIS346 on onboard computer A to 20Hz, and the publishing frequency of the industrial camera on onboard computer B to 20Hz as well.
+        Then, we placed a stopwatch in front of both cameras.
+        We observed the stopwatch values for image topics with the same timestamps from both cameras.
+        After multiple verifications, we concluded that the time difference between the DAVIS346 on onboard computer A and the industrial camera on onboard computer B, directly capturing images, was within 10ms, which aligns with our expectations.
+      </p>
+
+      <figure style="text-align: center;">
+        <img style="width: 48%;" src="Sensor_Synchronization/event_camera_synchronization.jpg" alt="Image description">
+        <img style="width: 48%;" src="Sensor_Synchronization/image_synchronization.jpg" alt="Image description">
+        <figcaption>Fig. 5. Synchronization Testing between the Event Camera (left) and the Standard Camera (right) </figcaption>
+      </figure>
+
+      <p>
+        We further test the synchronization between the event and image data streams in DAVIS346 as following:
+      </p>
+
+        <figure style="text-align: center;">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_1.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_2.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_3.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_4.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_5.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_6.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_7.png" alt="Image description">
+          <img style="width: 48%;" src="Sensor_Synchronization/event_vs_image_8.png" alt="Image description">
+          <figcaption>Fig. 6. Synchronization Testing between the Event and Image from DAVIS346 </figcaption>
+        </figure>
+
+      <br>
+      <iframe src="//player.bilibili.com/player.html?aid=229390210&bvid=BV168411o7BJ&cid=1152522995&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="display: block; margin: 0 auto; width: 60%; height: 40vh;"></iframe>
+
+      <h3>3.3. The Synchronization of Other Sensors</h3>
+      <p>
+        Our sensor platform can be seen as following:
+      </p>
+      <!-- <figure align="center">
+        <img class="report-img" src="Sensor_Synchronization/four_event_camera_platform.jpg" alt="Image description">
+        <figcaption>Fig. 7. Sensor Setup</figcaption>
+      </figure> -->
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Sensor_Synchronization/four_event_camera_platform.jpg" alt="Image description">
+        <figcaption>Fig. 7. Sensor Setup</figcaption>
+      </figure>
+
+
+      <h4>Tips:</h4>
+        <ul>
+          <li>
+            <p>
+              Event cameras are sensitive to infrared light, enabling them to detect the brightness changes caused by LiDAR with the right wavelength.
+              </p>
+          </li>
+        </ul>
+
+      <p>
+        To alleviate disturbance from the LiDAR on the event camera, we add an infrared filter on the lens surface of the DAVIS346 camera.
+        As can be seen from the video, we demonstrate that two event cameras with infrared filter while the other two event cameras without infrared filter.
+      </p>
+
+      <iframe src="//player.bilibili.com/player.html?aid=399299383&bvid=BV15o4y1u7Up&cid=1147844860&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="display: block; margin: 0 auto; width: 60%; height: 40vh;"></iframe>
+
+    </div>
+  </section>
+
+
+</div>
+
+
+
+<script src="https://erglab.github.io/M3EDS/js/plugins.js"></script>
+<script src="https://erglab.github.io/M3EDS/js/theme.js"></script>
+</body>
+
+<!--md转html：https://marked.js.org/demo/-->
+

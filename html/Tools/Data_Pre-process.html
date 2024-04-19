@@ -1,0 +1,601 @@
+
+<style>
+  #myDiv {
+      padding-top: 5%;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-bottom: 5%;
+  }
+  
+  p {
+    text-align: justify;
+      text-align-last: left;
+    text-justify: inter-word;
+  }
+  
+  .report-img {
+      width: 60%;
+      height: auto;
+  }
+  
+  .code-box {
+      width: 100%; /* 设置固定宽度 */
+      height: auto; /* 自适应高度 */
+      border: 1px solid #ccc;
+      border-radius: 0%;
+      background-color: #f1f1f1;
+      padding: 1%;
+      overflow: auto; /* 添加滚动条以适应内容过长的情况 */
+  
+    }
+  </style>
+
+<body>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="M3EDS-dataset"/>
+  <meta name="keywords" content="M3EDS-dataset"/>
+  <meta name="author" content="hsl"/>
+  <title>M3EDS-dataset
+  </title>
+  <link rel="shortcut icon" href="https://erglab.github.io/M3EDS/picture/icon.png"/>
+  <link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/plugins.css"/>
+  <link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/style.css"/>
+  <link rel="stylesheet" href="https://erglab.github.io/M3EDS/css/pink.css"/>
+  <nav id="sticky-navbar" class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light transparent navbar-clone fixed">
+    <div class="container">
+      <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+        <div class="navbar-brand w-100">
+          <a href="https://erglab.github.io/M3EDS/index.html">
+            <img src="https://erglab.github.io/M3EDS/picture/icon.png" alt="" />
+          </a>
+        </div>
+        <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+          <div class="offcanvas-header d-lg-none">
+            <h3 class="text-white fs-30 mb-0">M3EDS</h3>
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+          </div>
+          <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="https://erglab.github.io/M3EDS/index.html" class="nav-link">Home</a></li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                <ul class="dropdown-menu">                      
+                  <li class="nav-item">
+                    <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                  </li>
+
+                </ul>
+              </li>
+            </ul><!-- /.navbar-nav -->
+          </div><!-- /.offcanvas-body -->
+        </div><!-- /.navbar-collapse -->
+        <div class="navbar-other w-100 d-flex ms-auto">
+          <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <li class="nav-item d-lg-none"><button class="hamburger offcanvas-nav-btn"><span></span></button></li>
+          </ul>
+        </div>
+      </div><!-- /.navbar-collapse-wrapper -->
+    </div><!-- /.container -->
+  </nav>
+  <!--导航栏-->
+  <div class="content-wrapper">
+    <header class="wrapper bg-gray">
+      <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light">
+        <div class="container">
+          <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+            <div class="navbar-brand w-100">
+              <a href=""><img src="https://erglab.github.io/M3EDS/picture/icon.png" alt=""/></a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <h3 class="text-white fs-30 mb-0">
+                </h3>
+                <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="https://erglab.github.io/M3EDS/index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://erglab.github.io/M3EDS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                    <ul class="dropdown-menu">
+                      
+                      <li class="nav-item">
+                        <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>  
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.navbar-collapse-wrapper -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+
+
+    <section class="wrapper bg-gray">
+      <div id="myDiv">
+        <h1 align="center">Data pre-process</h1>
+        <h6 align="center"> <a href="https://github.com/cpymaple"> Peiyu Chen, Weipeng Guan</a></h6>
+
+        <h2>1. Abstract</h2>
+        <p>
+          In this report, we provide a brief overview of our Data pre-process.
+          This primarily involves modify the frequency of event streams.
+        </p>
+
+        <h2>2. Modify the frequency of event streams</h2>
+
+        <p>
+          The frequency of our event streams is 1000Hz. You can use  <a href="https://github.com/arclab-hku/Event_based_VO-VIO-SLAM/tree/main/Others/process_data/change_event_frequency/events_repacking_helper"> events_repacking_helper</a>
+          to extract event streams from the original bag and modify the frequency of event streams to a fixed frequency to meet your specific requirements. This tool is modified based on <a href=" https://github.com/HKUST-Aerial-Robotics/ESVO/tree/master/events_repacking_helper"> ESVO</a>.  
+        </p>
+
+        <h3>2.1 Events_repacking_helper Installation</h3>
+        
+        <p>
+          After cloning this repository, you can run the following command to install this tool
+
+          <div class="code-box">
+            <code> cd ~/catkin_ws/src
+              <br>
+                   catkin build events_repacking_helper
+            </code></div>
+        </p>
+
+        <h3>2.2 Events_repacking_helper Usage</h3>
+
+
+        <p>
+          This package provides an example of preparing a bag file for <a href="https://github.com/arclab-hku/Event_based_VO-VIO-SLAM#3-esvio"> ESVIO</a>.
+          A bag file recorded by a stereo event camera (e.g., a pair of DAVIS sensors) typically consists of the following topics:
+          <div class="code-box">
+          <code> /davis_left/events
+            <br>
+                 /davis_right/events
+          </code></div>
+        </p>
+
+        <p>
+           The original frequency of /davis_left/events is 60Hz: 
+        </p>
+
+        <figure style="text-align: center;">
+          <img style="width: 60%;" src="Data_Pre-process/60hz.jpg" alt="Image description">
+          <figcaption>Fig. 1. The original frequency of /davis_left/events topic is 60Hz</figcaption>
+        </figure>
+
+        <p>
+          You need to set the input and output paths as arguments in the file repacking.launch and change the event topics in the file EventMessageEditor.cpp, and then run the following command 
+        </p>
+
+        <div class="code-box">
+        <code>
+          roslaunch events_repacking_helper repacking.launch
+        </code></div>
+
+        <p>
+          After running the above command, the frequency of event streams will be modified to 1000Hz as follow:
+        </p>
+
+        <figure style="text-align: center;">
+          <img style="width: 60%;" src="Data_Pre-process/1000hz.jpg" alt="Image description">
+          <figcaption>Fig. 2. The modified frequency of /davis_left/events topic is 1000Hz</figcaption>
+        </figure>
+
+        <p>
+          Finally, the output bag file will be saved in the output path you set.
+        </p>
+
+      <h2>3. Filter Topic from rosbag</h2>
+      <p>
+        The new rosbag from events_repacking_helper only contain the event streams. 
+        If you want to use the data sequence in multi-sensor fusion SLAM systems, you need to filter the topic from the raw rosbag and them merge it with the rosbag from events_repacking_helper. 
+      </p>
+      <div class="code-box">
+        <code>
+          rosbag filter input.bag output.bag "topic == 'topic_name_1' or topic == 'topic_name_2'"
+        </code>
+      </div>
+
+      <p>
+        For example, we want to filter the topic: "/dvs/image_raw", "/dvs/imu" and "/optitrack/davis" from dynamic_rotation.bag of <a href="https://rpg.ifi.uzh.ch/davis_data.html">DAVIS240C</a>, we can use the following command
+      </p>
+      <div class="code-box">
+        <code>
+          rosbag filter /home/kwanwaipang/dataset/EVI-SAM/davis240c/dynamic_rotation.bag /home/kwanwaipang/dataset/EVI-SAM/davis240c/dynamic_rotation_other.bag "topic == '/dvs/image_raw' or topic == '/dvs/imu' or topic == '/optitrack/davis' "
+        </code>
+      </div>
+      
+      <br>
+
+      <figure style="text-align: center;">
+        <img style="width: 48%;" src="Data_Pre-process/before_filter.png" alt="Image description">
+        <img style="width: 48%;" src="Data_Pre-process/after_filter.png" alt="Image description">
+        <figcaption>Fig. 3. The Topics of the rosbag before and after filtering</figcaption>
+      </figure>
+
+      <h2>4. Merge rosbag</h2>
+      <p>
+        After filtering the topic from the raw rosbag, we can merge the rosbag from events_repacking_helper and the filtered rosbag.
+        We firstly obtain the 1000HZ event rosbag from events_repacking_helper (as shown in Fig.4).
+      </p>
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Data_Pre-process/event_1000hz.png" alt="Image description">
+        <figcaption>Fig. 4. The modified frequency of /davis_left/events topic is 1000Hz</figcaption>
+      </figure>
+
+      <p>
+        And then we merge it with the filtered rosbag from the previous section3.
+        The code of the merge rosbag can be obtain form <a href="https://github.com/arclab-hku/Event_based_VO-VIO-SLAM/tree/main/Others/process_data/data_merge/mpl_dataset_toolbox">Link</a>.
+      </p>
+
+      <div class="code-box">
+        <code>
+          catkin build mpl_dataset_toolbox
+          <br>
+          roslaunch mpl_dataset_toolbox bag_merger.launch directory_path:=[path_to_directory]
+          <br>
+          roslaunch mpl_dataset_toolbox bag_merger.launch directory_path:=/home/kwanwaipang/dataset/EVI-SAM/davis240c/dynamic_rotation
+        </code>
+      </div>
+
+      <p>
+        Note the the rosbags are needed to be in the same folder, with the following renamed files (we will fix this in the future). 
+      </p>
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Data_Pre-process/repack_the_merge_bag.png" alt="Image description">
+        <figcaption>Fig. 5. Repacking the rosbags for Merging</figcaption>
+      </figure>
+
+      <p>
+        Finally, we can obtain the final merged rosbag.
+        Note that the number of msgs of "/dvs/image_raw", "/dvs/imu" and "/optitrack/davis" are same as the left side of Fig.3.
+        While the number of msgs of "/dvs/events" is similar to "/dvs/imu", which is 1000 HZ.
+      </p>
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Data_Pre-process/after_merge.png" alt="Image description">
+        <figcaption>Fig. 6. The Final Merged rosbag</figcaption>
+      </figure>
+      
+      <h2>5. GT generation</h2>
+      <h3>5.1 M3EDS-Driving-gt</h3>
+      <p>
+
+        The ground truth of the M3EDS Driving dataset is generated in the SPAN-CPT system.
+        Referred to <a href="https://github.com/IPNL-POLYU/UrbanNavDataset/tree/master/tools">Link</a>.
+        The script loads all SPAN-CPT Ground True data and converts them to ENU frame or LiDAR local frame (set convert_body_frame = True) with the first line as origin.
+        And convert the GT to local coordinate based on the first message and the heading following TUM format.<br>
+        Specifically, first download it and then install some dependencies
+        <br> 
+
+        <div class="code-box">
+          <code>
+            cd gt_vis <br>
+            pip3 install numpy-quaternion matplotlib pymap3d <br>
+          </code>
+        </div> <br>
+
+        Then  change the 'novatel_path' in "run_vehicle_path.py"  and execute (as shown in Fig.7)<br>  <br>
+
+        <div class="code-box">
+          <code>
+            python3 run_vehicle_path.py 
+          </code>
+        </div> <br>
+
+        <figure style="text-align: center;">
+          <img style="width: 60%;" src="Data_Pre-process/drving gt.png" alt="Driving GT to TUM format">
+          <figcaption>Fig. 7. Driving GT to TUM format</figcaption>
+        </figure> <br>
+
+        You will get the truth value in TUM format, and then you can use evo tools to evaluate the algorithm performance
+
+        .<br>
+
+
+        
+      </p>
+      </div>
+    </section>
+  </div>
+  
+
+
+  <script src="https://erglab.github.io/M3EDS/js/plugins.js"></script>
+  <script src="https://erglab.github.io/M3EDS/js/theme.js"></script>
+</body>
