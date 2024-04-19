@@ -1,0 +1,504 @@
+<style>
+  #myDiv {
+    padding-top: 5%;
+		padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5%;
+	}
+  .code-box {
+      width: 100%; /* 设置固定宽度 */
+      height: auto; /* 自适应高度 */
+      border: 1px solid #ccc;
+      border-radius: 0%;
+      background-color: #f1f1f1;
+      padding: 1%;
+      overflow: auto; /* 添加滚动条以适应内容过长的情况 */
+
+    }
+</style>
+
+<body>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="M3EDS-dataset"/>
+  <meta name="keywords" content="M3EDS-dataset"/>
+  <meta name="author" content="hsl"/>
+  <title>M3EDS-dataset
+  </title>
+  <link rel="shortcut icon" href="https://NEUFS-MA.github.io/M3DSS/picture/icon.png"/>
+  <link rel="stylesheet" href="https://NEUFS-MA.github.io/M3DSS/css/plugins.css"/>
+  <link rel="stylesheet" href="https://NEUFS-MA.github.io/M3DSS/css/style.css"/>
+  <link rel="stylesheet" href="https://NEUFS-MA.github.io/M3DSS/css/pink.css"/>
+  <nav id="sticky-navbar" class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light transparent navbar-clone fixed">
+    <div class="container">
+      <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+        <div class="navbar-brand w-100">
+          <a href="https://NEUFS-MA.github.io/M3DSS/index.html">
+            <img src="https://NEUFS-MA.github.io/M3DSS/picture/icon.png" alt="" />
+          </a>
+        </div>
+        <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+          <div class="offcanvas-header d-lg-none">
+            <h3 class="text-white fs-30 mb-0">M3EDS</h3>
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+          </div>
+          <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="https://NEUFS-MA.github.io/M3DSS/index.html" class="nav-link">Home</a></li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                <ul class="dropdown-menu">                      
+                  <li class="nav-item">
+                    <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                  </li>
+                </ul>
+              </li>
+            </ul><!-- /.navbar-nav -->
+          </div><!-- /.offcanvas-body -->
+        </div><!-- /.navbar-collapse -->
+        <div class="navbar-other w-100 d-flex ms-auto">
+          <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <li class="nav-item d-lg-none"><button class="hamburger offcanvas-nav-btn"><span></span></button></li>
+          </ul>
+        </div>
+      </div><!-- /.navbar-collapse-wrapper -->
+    </div><!-- /.container -->
+  </nav>
+  <!--导航栏-->
+  <div class="content-wrapper">
+    <header class="wrapper bg-gray">
+      <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light">
+        <div class="container">
+          <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+            <div class="navbar-brand w-100">
+              <a href=""><img src="https://NEUFS-MA.github.io/M3DSS/picture/icon.png" alt=""/></a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <h3 class="text-white fs-30 mb-0">
+                </h3>
+                <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="https://NEUFS-MA.github.io/M3DSS/index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://NEUFS-MA.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                    <ul class="dropdown-menu">
+                      
+                      <li class="nav-item">
+                        <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>  
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.navbar-collapse-wrapper -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+
+
+    <section class="wrapper bg-gray">
+      <div id="myDiv">
+        <h1 align="center">IMU Intrinsics</h1>
+        <h6 align="center"> <a href="https://github.com/lxw919">Xianwei Lv</a></h6>
+
+        <h2 id="简介：">Introduction:</h2>
+        <p>The error model of the IMU<br>
+          The errors of accelerometers and gyroscopes can be divided into deterministic errors and random errors. 
+          Deterministic errors can be calibrated in advance, including bias, scale, misalignment, etc.
+          Random errors usually assume that the noise obeys a Gaussian distribution, including Gaussian white noise, 
+          random walker, etc.
+          Scale can be regarded as the ratio between the actual value and the input value. 
+          When the misalignment multi-axis sensor is manufactured, 
+          xyz may not be vertical due to manufacturing process problems.
+          Both "White Noise" and "Bias" have two forms: continuous time model and continuous time model. 
+          The two modes can be converted to each other. 
+          Here, it is emphasized that some calibration tools output continuous type (imu_utils) 
+          and some are discrete type (kalibr_allan ).
+          Here I use imu_utils to calibrate the imu, 
+          and the obtained acceleration noise and acceleration random walk noise 
+          as well as angular velocity noise and angular velocity random walk noise.</p>
+
+        <h2 id="Method and process:">Method and process:</h2>
+        <p>The Allan variance method was proposed by David Allan of the National Bureau of Standards in the 1960s, and it is an analysis method based on time domain. The brief process is as follows:<br>
+          1. Keep the sensor absolutely still to acquire data. <br>
+          2. Segment the data and set the duration of the time segment. <br>
+          3. Average the sensor data over time. <br>
+          4. Calculate the variance and draw the Allen curve. . <br>
+        </p>
+ 
+        <p>1.Install dependencies</p>
+        <div class="code-box">
+          <code>sudo apt-get install libdw-dev
+          </code></div>
+
+        <p>2. Install the imu driver to be able to record imu topic.</p>
+
+        <p>3.Down;oad imu_utils和code_utils</p>
+        <p>imu_utils download address is:<a href="https://github.com/gaowenliang/imu_utils">https://github.com/gaowenliang/imu_utils</a><br>
+          code_utils download address is: <a href="https://github.com/gaowenliang/code_utils">https://github.com/gaowenliang/code_utils</a><br>
+        </p>
+
+        <p>4. Before compiling, let's pay attention to three problems</p>
+        <p>
+          (1) Install the ceres library, code_imu depends on ceres. <br>
+          (2) Do not put imu_utils and code_utils together under src for compilation. Since imu_utils depends on code_utils, first put code_utils under the src of the workspace and compile it. <br>
+        </p>
+        <p>5. Compile</p>
+
+        <p>Create a folder catkin_ws, internal folder src; put code_utils in src first<br>
+          <div class="code-box">
+            <code>cd catkin_ws/src <br>
+              git clone https://github.com/gaowenliang/code_utils.git<br>
+              cd ..<br>
+              catkin_make<br>
+            </code></div>
+
+            Then put imu_utils under the src of the workspace, do not delete the previous files, and then compile:<br>
+          <div class="code-box">
+            <code>cd catkin_ws/src <br>
+              cd catkin_ws/src<br>
+              git clone https://github.com/gaowenliang/imu_utils.git<br>
+              cd ..<br>
+              catkin_make<br>
+            </code></div>
+        </p>    
+        Compile and install complete
+        <p>6.Calibration</p>
+        <p>
+          1. Keep the IMU still for two hours and record the IMU data;
+                    <div class="code-box">
+            <code>rosbag record topic -O imu.bag <br>
+            </code></div>
+          2. Then modify the src/imu_utils/launch file according to the requirements: mainly including topic name, duration and so on; <br>       
+          
+          3. To play the recorded bag, it must be played at double speed. <br>
+                    <div class="code-box">
+            <code>rosbag play -r 200 imu-.bag (Published at 200x speed) <br>
+            </code></div>
+
+          4、run launch <br>
+           <div class="code-box">
+            <code>roslaunch imu_utils xxx.launch <br>
+            </code></div> <br>
+            5. The final calibration result file is saved in src to find the corresponding yaml file <br>        </p>
+
+
+
+
+
+          
+
+        <h2 id="refer to:">refer to:</h2>
+
+        <p><a href="https://blog.csdn.net/weixin_53073284/article/details/123341141?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165399820816782248580386%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=165399820816782248580386&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-123341141-null-null.142%5Ev11%5Epc_search_result_control_group,157%5Ev12%5Enew_style&utm_term=%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8imu_utils%E6%A0%87%E5%AE%9A&spm=1018.2226.3001.4187"> csdn</a>
+        </p>
+
+
+      </div>
+    </section>
+
+
+  </div>
+  
+
+  <script src="https://NEUFS-MA.github.io/M3DSS/js/plugins.js"></script>
+  <script src="https://NEUFS-MA.github.io/M3DSS/js/theme.js"></script>
+</body>
+
