@@ -1,0 +1,641 @@
+<style>
+  #myDiv {
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5%;
+	}
+  p {
+  text-align: justify;
+    text-align-last: left;
+  text-justify: inter-word;
+}
+  .code-box {
+      width: 100%; /* 设置固定宽度 */
+      height: auto; /* 自适应高度 */
+      border: 1px solid #ccc;
+      border-radius: 0%;
+      background-color: #f1f1f1;
+      padding: 1%;
+      overflow: auto; /* 添加滚动条以适应内容过长的情况 */
+
+    }
+  .report-img {
+  width: 60%;
+  height: auto;
+}
+</style>
+
+<body>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="M3EDS-dataset"/>
+  <meta name="keywords" content="M3EDS-dataset"/>
+  <meta name="author" content="hsl"/>
+  <title>M3EDS-dataset
+  </title>
+  <link rel="shortcut icon" href="https://neufs-ma.github.io/M3DSS/picture/icon.png"/>
+  <link rel="stylesheet" href="https://neufs-ma.github.io/M3DSS/css/plugins.css"/>
+  <link rel="stylesheet" href="https://neufs-ma.github.io/M3DSS/css/style.css"/>
+  <link rel="stylesheet" href="https://neufs-ma.github.io/M3DSS/css/pink.css"/>
+  <nav id="sticky-navbar" class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light transparent navbar-clone fixed">
+    <div class="container">
+      <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+        <div class="navbar-brand w-100">
+          <a href="https://neufs-ma.github.io/M3DSS/index.html">
+            <img src="https://neufs-ma.github.io/M3DSS/picture/icon.png" alt="" />
+          </a>
+        </div>
+        <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+          <div class="offcanvas-header d-lg-none">
+            <h3 class="text-white fs-30 mb-0">M3EDS</h3>
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+          </div>
+          <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="https://neufs-ma.github.io/M3DSS/index.html" class="nav-link">Home</a></li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                <ul class="dropdown-menu">                      
+                  <li class="nav-item">
+                    <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                  </li>
+
+                </ul>
+              </li>
+            </ul><!-- /.navbar-nav -->
+          </div><!-- /.offcanvas-body -->
+        </div><!-- /.navbar-collapse -->
+        <div class="navbar-other w-100 d-flex ms-auto">
+          <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <li class="nav-item d-lg-none"><button class="hamburger offcanvas-nav-btn"><span></span></button></li>
+          </ul>
+        </div>
+      </div><!-- /.navbar-collapse-wrapper -->
+    </div><!-- /.container -->
+  </nav>
+  <!--导航栏-->
+  <div class="content-wrapper">
+    <header class="wrapper bg-gray">
+      <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light">
+        <div class="container">
+          <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+            <div class="navbar-brand w-100">
+              <a href=""><img src="https://neufs-ma.github.io/M3DSS/picture/icon.png" alt=""/></a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+              <div class="offcanvas-header d-lg-none">
+                <h3 class="text-white fs-30 mb-0">
+                </h3>
+                <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+              </div>
+              <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="https://neufs-ma.github.io/M3DSS/index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Download</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Download/Driving.html" class="dropdown-item">Driving</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Download/UGV.html" class="dropdown-item">UGV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Download/UAV.html" class="dropdown-item">UAV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Download/Handheld.html" class="dropdown-item">Handheld</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Download/Quadruped_robot.html" class="dropdown-item">Quadruped robot</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Tools</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Event_Camera_Driver.html" class="dropdown-item">Event Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Event_Reconstruction_Image.html" class="dropdown-item">Event Reconstruction Image</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/RGB-D_Camera_Driver.html" class="dropdown-item">RGB-D Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Infrared_Camera_Driver.html" class="dropdown-item">Infrared Camera Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/VLP-32C_Driver.html" class="dropdown-item">VLP-32C Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Mid-360_Driver.html" class="dropdown-item">Mid-360 Driver</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/ROS_Uart_Package_of_GNSS.html" class="dropdown-item">ROS Uart Package of GNSS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Sensor_Synchronization.html" class="dropdown-item">Sensor Synchronization</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Data_Pre-process.html" class="dropdown-item">Data Pre-process</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Calibration</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Event_Camera_Intrinsics.html" class="dropdown-item">Event Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Standard_Camera_Intrinsics.html" class="dropdown-item">Standard Camera Intrinsics</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Camera_and_IMU_Extrinsic.html" class="dropdown-item">Camera and IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/Camera-LiDAR_Extrinsic.html" class="dropdown-item">Camera-LiDAR Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/LiDAR-IMU_Extrinsic.html" class="dropdown-item">LiDAR-IMU Extrinsic</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Calibration/IMU_Intrinsic_Calibration.html" class="dropdown-item">IMU Intrinsic Calibration</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Benchmark Evaluation</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Mono.html" class="dropdown-item">VINS-Mono</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/VINS-Fusion.html" class="dropdown-item">VINS-Fusion</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/GVINS.html" class="dropdown-item">GVINS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/ORB-SLAM3.html" class="dropdown-item">ORB-SLAM3</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/DSO.html" class="dropdown-item">DSO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/DM-VIO.html" class="dropdown-item">DM-VIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/EnVIO.html" class="dropdown-item">EnVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/EVO.html" class="dropdown-item">EVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/Ultimate-SLAM.html" class="dropdown-item">Ultimate-SLAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/ESVO.html" class="dropdown-item">ESVO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/PL-EVIO.html" class="dropdown-item">PL-EVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/ESVIO.html" class="dropdown-item">ESVIO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/A-LOAM.html" class="dropdown-item">A-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LeGO-LOAM.html" class="dropdown-item">LeGO-LOAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LIO-Mapping.html" class="dropdown-item">LIO-Mapping</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LIO-SAM.html" class="dropdown-item">LIO-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/LVI-SAM.html" class="dropdown-item">LVI-SAM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIO2.html" class="dropdown-item">Fast-LIO2</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://neufs-ma.github.io/M3DSS/html/Benchmark_Evaluation/Fast-LIVO.html" class="dropdown-item">Fast-LIVO</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="nav-link">Contact Us </a>
+                    <ul class="dropdown-menu">
+                      
+                      <li class="nav-item">
+                        <a href="http://www.fsgraduate.neu.edu.cn/2021/0916/c8025a203219/page.htm" class="dropdown-item">Xiaoguang Ma</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://www.mech.hku.hk/academic-staff/Lu-P" class="dropdown-item">Peng Lu</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>  
+            </div>
+            <!-- /.navbar-other -->
+          </div>
+          <!-- /.navbar-collapse-wrapper -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+
+
+    <section class="wrapper bg-gray">
+      <div id="myDiv">
+        <h1 align="center">Event_Camera_Intrinsics</h1>
+        <h6 align="center"> <a href="https://github.com/xukang2311">Kang Xu</a></h6>
+	      <h2>Abstract</h2>
+	      <p>The article adapt the method of reconstructing images through E2vid for intrinsic calibration of event camera. 
+          Here, we used dvs346 as an example to demonstrate the results of the event camera calibration process, 
+          and verified the effectiveness of the method by comparing the image and event calibration results</p>
+	      <h2>Procession</h2>
+	      <h3>1、Record rosbag package</h3>
+	      <div class="code-box">
+        <code>rosbag record /capture_node/camera/image /capture_node/events /capture_node/imu -O out.bag
+	      </code></div>
+        <p>
+          --/capture_node/camera/image image topic<br>
+          --/capture_node/events  events topic<br>
+          --/capture_node/imu imu topic <br>
+          --out.bag file name<br>
+        </p>
+	      <h3>2、Image intrinsic calibration</h3>
+	      <p>
+          Using Kalibr or MATLAB (requires exporting images from rosbag)
+          </p>
+	      <h4 id="(1)kalibr">(1)kalibr</h4>
+        <h5>i.install</h4>
+          <p>
+            Go to Kalibr's official website to install according to the tutorial, link:
+            <a href="https://github.com/ethz-asl/kalibr">https://github.com/ethz-asl/kalibr</a>
+          </p>
+        <h5>ii.calib</h4>
+        <p>Enter the Kalibr workspace and run the following instructions 
+          (You may need to first source dev/setup. bash)</p>
+        <div class="code-box">
+        <code>rosrun kalibr kalibr_calibrate_cameras --bag out.bag --topics /capture_node/camera/image --models pinhole-radtan --target checkerboard.yaml
+	      </code></div>
+        <p>
+          --bag rosbag package<br>
+          --topics image topic<br>
+          --models image model<br>
+          --target checkerboard parameters<br>
+        </p>
+	      <p>result:</p>
+        <div class="code-box">
+          <code>
+            cam0:<br>
+            cam_overlaps: []<br>
+            camera_model: pinhole<br>
+            distortion_coeffs: [-0.38176694245439546, 0.14885485907996424, 3.70127391038794e-05, -0.00017056761391653452]<br>
+            distortion_model: radtan<br>
+            intrinsics: [252.37893909717883, 252.40414164107983, 173.4386346201833, 120.19819514545445]<br>
+            resolution: [346, 260]<br>
+            rostopic: /capture_node/camera/image<br>
+          </code></div>
+          <p></p>
+        <figure style="text-align: center;">
+          <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/kalibr/reprojection_error.png" alt="Image description">
+          <figcaption>Fig. 1. Calibration reprojection error of Dvs346 image using Kalibr</figcaption>
+        </figure>
+        <figure style="text-align: center;">
+          <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/kalibr/intrinsics.png" alt="Image description">
+          <figcaption>Fig. 2. Calibration results of Dvs346 image using Kalibr </figcaption>
+        </figure>
+	      <h4>(2) Matlab (If there are too many images, it is best to reduce the image frequency first, 
+          and then use it to jointly calibrate extrinsics with IMU)</h4>
+	      <h5>i.Reduce the frequency of image data to 4Hz</h5>
+        <p>First, start a terminal to run the roscore node</p>
+        <div class="code-box">
+          <code>roscore
+        </code></div>
+	      <p>
+          The instructions for the three terminals are (run in sequence):
+          </p>
+	      <p>
+          Reduce frequency:
+          </p>
+        <div class="code-box">
+          <code>rosrun topic_tools throttle messages /capture_node/camera/image 4.0 /image_raw
+        </code></div>
+        <p>
+          --/capture_node/camera/image  topic  that need to be reduced in frequency
+          <br>
+          --/image_raw topic name after reducing frequency
+        </p>
+	      <p>Record the image and imu after reducing the frequency:</p>
+       <div class="code-box">
+        <code>rosbag record /image_raw /capture_node/imu -O sample.bag
+       </code></div>
+       <p>
+        --/image_raw record the image topic with IMU after reducing the frequency
+      </p>
+
+	     <p>Play rosbag package containing topics that require frequency reduction:</p>
+       <div class="code-box">
+        <code>rosbag play out.bag
+       </code></div>
+ 
+	     <p>This will result in a rosbag containing a 4Hz frequency image and IMU data</p>
+       <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/1.png" alt="Image description">
+        <figcaption>Fig. 3. Comparison of rosbag package before and after reduction (top shows before processing, bottom shows after processing) </figcaption>
+      </figure>
+
+	     <h5>ii.Export images in rosbag package</h5>
+	     <p>refer to:<a href="https://zhuanlan.zhihu.com/p/552617948">Link</a></p>
+       <p>
+        Export images as shown in Figure 4:</p>
+       <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/matlab/out_image.png" alt="Image description">
+        <figcaption>Fig. 4. images from rosbag package </figcaption>
+      </figure>
+	     <h5>iii.Calibration in Matlab</h5>
+       <p>Import the exported image into the Matlab Camera Calibrator toolbox and click on Calibrate above for calibration:</p>
+       <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/matlab/matlab1.png" alt="Image description">
+        <figcaption>Fig. 5. Import images into Matlab </figcaption>
+      </figure>
+
+       <p>Identify the images that cause significant reprojection errors and delete them</p>
+       <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/matlab/matlab2.png" alt="Image description">
+        <figcaption>Fig. 6. Select images with significant errors and delete them </figcaption>
+      </figure>
+
+      <p>Export Camera Parameters</p>
+      <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/matlab/matlab3.png" alt="Image description">
+        <figcaption>Fig. 7. Calitration results </figcaption>
+      </figure>
+
+      <p>The calibrated camera internal parameters are located in the work area, 
+        and the calibration results of intrinsics are shown in the following figure:</p>
+
+      <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/image/matlab/matlab4.png" alt="Image description">
+        <figcaption>Fig. 8. Intrinsic calibration results </figcaption>
+      </figure>
+
+	     <h3>3、Intrinsics calibration of event cameras</h3>
+       <p>For event camera Intrinsics we use the e2vid reconstruction method to reconstruct image frames for calibration</p>
+       <h4>(1)e2vid</h4> 
+       <p>For specific methods, please refer to the Event Reconstruction Image in the webpage tools:
+        <a href="https://neufs-ma.github.io/M3DSS/html/Tools/Event_Reconstruction_Image.html">(Link)</a>.
+       </p>
+       <h4>(2)kalibr</h4> 
+       <p>
+        Through e2vid, reconstructed images can be generated, 
+        and Python code can be run to convert the images into rosbag for calibration. 
+        The conversion code link is:
+        <a href="https://github.com/ERGlab/M3EDS/blob/main/html/Calibration/Event_Camera_Intrinsics/dvs346/event/kalibr/images_to_rosbag.py">
+          https://github.com/ERGlab/M3EDS/blob/main/html/Calibration/Event_Camera_Intrinsics/dvs346/event/kalibr/images_to_rosbag.py</a>.
+       </p>
+       <div class="code-box">
+        <code>python images_to_rosbag.py --rosbag_folder /img_out --image_folder /e2calib --image_topic /dvs/image_reconstructed
+       </code></div>
+       <p> 
+        --rosbag_folder rosbag output folder<br>
+        --image_topic the topic of reconstruction images<br>
+        At this point, a rosbag package for event reconstruction images can be obtained, 
+        which can be calibrated using the Kalibr calibration method mentioned above. The results are shown in Figure 9:
+       </p>
+       <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/event/kalibr/intrinsics.png" alt="Image description">
+        <figcaption>Fig. 9. Event reconstruction image calibration results </figcaption>
+      </figure>
+      <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/event/kalibr/reprojection_error.png" alt="Image description">
+        <figcaption>Fig. 10. re-projection error </figcaption>
+      </figure>
+
+      <p> 
+        Note: Using reconstructed images for Kalibr calibration may result in abnormal distortion. 
+        The above calibration is normal, but during multiple calibrations, abnormal distortion may occur as shown in Figure 11
+      </p>
+      <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/event/kalibr/errord.png" alt="Image description">
+        <figcaption>Fig. 11. Calibration results with abnormal distortion </figcaption>
+      </figure>
+       
+       <h4>(3)matlab</h4> 
+      <p> 
+        According to the reconstructed image, calibrate it in the Matlab toolbox, 
+        following the same steps as the image intrinsic calibration using Matlab. 
+        The results are shown in Figure 12:
+      <p> 
+      <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/event/matlab/1.png" alt="Image description">
+        <figcaption>Fig. 12. Event reconstruction image calibration intrinsics </figcaption>
+      </figure>  
+      <figure style="text-align: center;">
+        <img class="report-img" src="Event_Camera_Intrinsics/dvs346/event/matlab/error.png" alt="Image description">
+        <figcaption>Fig. 13. Event reconstruction image calibration reprojection error </figcaption>
+      </figure>  
+
+       <h2>Comparation analysis </h2>
+
+       <p>The calibration results are as follows:</p>
+       <div class="code-box">
+        <code>
+          (1)kalibr results<br>
+          Intrinsics based on images<br>
+          k : [ 252.3789391   252.40414164  173.43863462  120.19819515] <br>
+          d : [-0.38176694  0.14885486  0.00003701 -0.00017057] <br>
+          Intrinsics based on events<br>
+          k : [ 253.84773123  253.88799685  174.01053551  123.19547128] <br>
+          d : [-0.38261608  0.14698837 -0.00143755 -0.00033804] <br>
+          (2)Matlab results<br>
+          Intrinsics based on images:<br>
+          k : [ 254.0247   253.9952  173.8491  121.3679] <br>
+          d : [-0.3912  0.1596  0 0] <br>
+          Intrinsics based on events<br>
+          k : [ 253.6016   253.6231 174.1880  121.6994] <br>
+          d : [-0.3908  0.1590 0 0] <br>
+      </code></div>
+       <p>
+        Comparing the above calibration results, 
+        it can be found that the events using the intrinsics calibration method are similar to the image calibration results, 
+        which can be extended to event cameras without images (such as dvexplorer),
+        However, attention should be paid to the issue of abnormal distortion in the Kalibr calibration and reconstruction images.
+       </p>
+       <h2>reference:</h2>
+        <p> 
+          Kalibr:<a href="https://github.com/ethz-asl/kalibr">https://github.com/ethz-asl/kalibr</a>
+        </p>
+        <p>
+          E2vid:<a href="https://github.com/ethz-asl/kalibr">https://github.com/uzh-rpg/rpg_e2vid</a>
+        </p>
+
+     </div>
+    </section>
+
+
+  </div>
+  
+
+
+  <script src="https://neufs-ma.github.io/M3DSS/js/plugins.js"></script>
+  <script src="https://neufs-ma.github.io/M3DSS/js/theme.js"></script>
+</body>
+
