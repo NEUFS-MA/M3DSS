@@ -410,7 +410,7 @@
               (3)git clone https://github.com/facontidavide/rosbag_editor<br>
               (4)cd .. && catkin build
             </code>
-          </div>
+          </div><br>
           After the compilation is completed, 
           the Rosbag Editor is successfully installed, 
           and then enter the following command to run it successfully
@@ -419,67 +419,38 @@
               rosrun rosbag_editor rosbag_editor
             </code>
           </div>
-
         </p>
 
-        <h3>1.1 Download package</h3>
-
-
-        <h3>1.2 MVS Client installation</h3>
+        <h2>3.Application Example</h2>
         <p>
-          (1)Download MVS Client. <a href="https://1drv.ms/u/s!Au764psZBucRgW4Apz3HnCphHr3K?e=U0Jlys">download link</a>.<br>
-          (2)Open this compressed package and install a suitable edition for your computer
-        </p>
+          In the UI of the Rosbag Editor, 
+          we can import the rosbag package that needs 
+          to be edited into it,and as the collected 
+          data contains multiple sensors, 
+          so it may take some time.
+        </p><br>
         <figure style="text-align: center;">
-          <img style = "width: 70%" src=" https://neufs-ma.github.io/M3DSS/html/Tools/Rosbag" alt="Image description">
-          <figcaption>Fig. 1. The UI of Rosbag Editor</figcaption>
-        </figure>
-        <div class="code-box">
-          <code>
-            sudo dpkg install -i MVS-2.1.2_x86_64_20221208.deb (for example)
-          </code>
-        </div>
-        <figure style="text-align: center;">
-          <img style = "width: 70%" src=" https://neufs-ma.github.io/M3DSS/html/Tools/Infrared_Camera_Driver_pic/MVS_client-2.png" alt="Image description">
-          <figcaption>Fig. 3. Install MVS_client</figcaption>
+          <img style = "width: 70%" src="https://github.com/NEUFS-MA/M3DSS/blob/main/html/Tools/Rosbag_Editor_pic/loaded_img.png?raw=true" alt="Image description">
+          <figcaption>Fig. 1. The UI of Rosbag Editor after importing rosbag</figcaption>
         </figure>
 
-        <h3>1.3 Camera ethernet ip configuration</h3>
         <p>
-          Set the Camera Ethernet IP to "manual" and refer to the following figure for the configuration of the IP address.
+          Then we can import the required topics in the following order, 
+          rename the selected topics, cut the duration, and finally save the edited file. 
+          In addition to the above functions we use in the creation process of our dataset, 
+          Rosbag Editor has other functions such as setting compression formats 
+          for everyone to explore and use.
         </p>
-        <figure style="text-align: center;">
-          <img style = "width: 70%" src=" https://neufs-ma.github.io/M3DSS/html/Tools/Infrared_Camera_Driver_pic/IP.png" alt="Image description">
-          <figcaption>Fig. 4. Camera ethernet IP configuration</figcaption>
-        </figure>
-
-
-        <h2>2 Compile </h2>
-        <div class="code-box">
-          <code>
-            (1)cd ~/catkin_ws<br>
-            (2)catkin_make<br>
-            (3)source devel/setup.bash
-          </code>
-        </div>
-
-        <h2>3 Run </h2>
-        <div class="code-box">
-          <code>
-            (1)roslaunch hikrobot_infrared_camera infrared_camera.launch<br>
-            (2)roslaunch hikrobot_infrared_camera infrared_camera_rviz.launch (Visualization)
-          </code>
-        </div>
 
         <figure style="text-align: center;">
-          <img style = "width: 70%" src=" https://neufs-ma.github.io/M3DSS/html/Tools/Infrared_Camera_Driver_pic/topic.png" alt="Image description">
-          <figcaption>Fig. 5. Ros_topic of this package</figcaption>
+          <img style = "width: 70%" src="https://github.com/NEUFS-MA/M3DSS/blob/main/html/Tools/Rosbag_Editor_pic/step1.png?raw=true" alt="Image description">
+          <figcaption>Fig. 2. The step 1 after importing rosbag</figcaption>
         </figure>
-        
         <figure style="text-align: center;">
-          <img style = "width: 70%" src=" https://neufs-ma.github.io/M3DSS/html/Tools/Infrared_Camera_Driver_pic/rviz.png" alt="Image description">
-          <figcaption>Fig. 6. Visualization of infrared camera</figcaption>
+          <img style = "width: 70%" src="https://github.com/NEUFS-MA/M3DSS/blob/main/html/Tools/Rosbag_Editor_pic/step2.png?raw=true" alt="Image description">
+          <figcaption>Fig. 3. The step 2 after importing rosbag</figcaption>
         </figure>
+
 
 
 
