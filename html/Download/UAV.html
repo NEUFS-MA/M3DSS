@@ -392,6 +392,209 @@
     <section class="wrapper bg-gray">
       <div id="myDiv">
         <!--在此插入内容-->
+	<h1 align="center">UAV</h1>
+
+        <h2>Introduction</h2>
+        <h6>
+          <p>
+            This platform, as a flying platform, has the characteristics of high vibration and high aggressiveness. 
+	    However, due to the limited payload capacity of the drone, we only carried a small number of sensors. 
+	    Due to the need to install specific sensors and control the overall weight and wheelbase, the platform was designed, 
+            processed, and built by the author himself. The UAV platform adopts a quadcopter structure, and the rack design is shown in Figure 2. 
+	    The platform adopts four 2806 brushless motors and can provide a total lift of 8.4kg at 24V voltage using a 6-inch three bladed propeller. 
+	    The flight control adopts the Nora model flight control from Lei Xun Innovation Company, 
+	    and the electrical adjustment adopts the 45A four in one electrical adjustment of the V45 model T-motor.
+          </p>
+
+        </h6>
+        <br>
+
+        <h3>Sensor list</h3>
+        <h4 style="display: flex;">
+          <!-- (2)Right slant LiDAR (<a href="https://velodynelidar.com/products/puck/">Velodyne VLP-16</a>) -->
+          <details>
+            <summary>
+              (2)Solid-state LiDAR (<a href="https://www.livoxtech.com/mid-360">Livox Mid-360</a>)
+            </summary>
+            <br>
+            <table>
+              <tr>
+                <td>
+                  <h4>Frequency:</h4>
+                </td>
+                <td>
+                  <h4>10Hz</h4>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>FOV:</h4>
+                </td>
+                <td>
+                  <h4>360°(Horizontal),59°(Vertical)</h4>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Distance:</h4>
+                </td>
+                <td>
+                  <h4>up to 70m</h4>
+                </td>
+              </tr>
+            </table>
+            <br>
+          </details>
+        </h4>
+
+        <h4 style="display: flex;">
+          <!-- (3)Left slant LiDAR (<a href="http://wiki.ros.org/lslidar_c16">Lslidar C16</a>) -->
+          <details>
+            <summary>
+              (3)RGB-D Camera (<a href="https://www.intelrealsense.com/zh-hans/depth-camera-d435/">D435</a>)
+            </summary>
+            <br>
+            <table>
+              <tr>
+                <td>
+                  <h4>Frequency:</h4>
+                </td>
+                <td>
+                  <h4>30Hz</h4>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Resolution:</h4>
+                </td>
+                <td>
+                  <h4>1280*720 pixel</h4>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>FOV:</h4>
+                </td>
+                <td>
+                  <h4>87°(Horizontal),58°(Vertical)</h4>
+                </td>
+              </tr>
+            </table>
+            <br>
+          </details>
+        </h4>
+
+        <h4 style="display: flex;">
+          <!-- (4)IMU (<a href="https://www.xsens.com/products/mti-10-series">Xsens Mti-10</a>) -->
+          <details>
+            <summary>
+              (4)IMU (<a href="https://www.hipnuc.com/product_attitude_ch10x.html">CUAV Nora</a>)
+            </summary>
+            <br>
+            <table>
+              <tr>
+                <td>
+                  <h4>Frequency:</h4>
+                </td>
+                <td>
+                  <h4>160Hz</h4>
+                </td>
+              </tr>
+            </table>
+            <br>
+          </details>
+        </h4>
+
+        <h4 style="display: flex;">
+          <!-- (5)GNSS receivers -->
+          <details>
+            <summary>
+              (5)GNSS/INS-RTK (<a href="https://www.hipnuc.com/product_position_nav_ch310.html">Hipnuc CH310S</a>)
+            </summary>
+            <br>
+            <table>
+              <tr>
+                <td>
+                  <h4>Frequency:</h4>
+                </td>
+                <td>
+                  <h4>400Hz</h4>
+                </td>
+              </tr>
+            </table>
+            <br>
+          </details>
+        </h4>
+
+
+        <h4 style="display: flex;">
+          <!-- (7)Event Camera -->
+          <details>
+            <summary>
+              (7)Event Camera
+            </summary>
+            <br>
+            <table>
+              <tr>
+                <td rowspan="4">
+                  <h4>Inivation DAVIS346-color:</h4>
+                </td>
+                <td>
+                  <h4>Quantity:</h4>
+                </td>
+                <td>
+                  <h4>X2</h4>
+                </td>
+                <td>&nbsp&nbsp&nbsp&nbsp</td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Frequency:</h4>
+                </td>
+                <td>
+                  <h4>1000Hz</h4>
+                </td>
+                <td>&nbsp&nbsp&nbsp&nbsp</td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Resolution:</h4>
+                </td>
+                <td>
+                  <h4>346×260 pixel</h4>
+                </td>
+                <td>&nbsp&nbsp&nbsp&nbsp</td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>IMU:</h4>
+                </td>
+                <td>
+                  <h4>MPU6150, 6-axis</h4>
+                </td>
+                <td>&nbsp&nbsp&nbsp&nbsp</td>
+              </tr>
+            </table>
+            <br>
+          </details>
+        </h4>
+        <br>
+
+	<h3>Sensor setups</h3>
+        <figure style="text-align: center;">
+          <img style = "width: 32%" src=" UAV_pic/uav_sensor.png" alt="Image description">
+          <img style = "width: 32%" src=" UAV_pic/jijia-1.JPG" alt="Image description">
+	  <img style = "width: 32%" src=" UAV_pic/jijia-2.JPG" alt="Image description">
+          <!-- <figcaption>Fig. 1. The location of sensors </figcaption> -->
+        </figure>
+
+	<h3>CAD drawings</h3>
+        <figure style="text-align: center;">
+          <img style = "width: 48%" src=" UGV_pic/UAV-X.png" alt="Image description">
+          <img style = "width: 48%" src=" UGV_pic/UAV-Z.png" alt="Image description">
+          <!-- <figcaption>Fig. 1. The location of sensors </figcaption> -->
+        </figure>
+	
       </div>
     </section>
 
