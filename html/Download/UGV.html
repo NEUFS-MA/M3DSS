@@ -901,78 +901,98 @@
         </center><br>
         <br>
 
-       <div id="myDiv">
-	<h2>Topics of all platforms and sensors</h2>
-          <table style="border-collapse: collapse; width: 100%; height: 1056.53px; border-color: #000000;" border="1">
-          <tbody>
-          <tr style="height: 26.1333px;">
-          <td style="width: 31.3318%; height: 26.1333px; text-align: center;"><span style="font-size: 14pt;"><strong>Platforms</strong></span></td>
-          <td style="width: 33.8722%; height: 26.1333px; text-align: center;"><span style="font-size: 14pt;"><strong>Sensors</strong></span></td>
-          <td style="width: 34.796%; height: 26.1333px; text-align: center;"><span style="font-size: 14pt;"><strong>Topics</strong></span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="height: 380.8px; width: 31.3318%; text-align: center;" rowspan="17"><span style="font-size: 14pt;"><strong>A quadruped robot/</strong></span><br /><span style="font-size: 14pt;"><strong>UGV/Handheld</strong></span></td>
-          <td style="height: 134.4px; width: 33.8722%; text-align: center;" rowspan="6"><span style="font-size: 12pt;">Event cameras</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_left/events</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_left/image</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_left/imu</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_right/events</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_right/image</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_right/imu</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 33.8722%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">IMU</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/IMU_data</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">VI-sensor</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/camera/infra1/image_rect_raw</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/camera/infra2/image_rect_raw</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 33.8722%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">Infrared camera</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/hikrobot_infrared_camera/rgb</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">RGB cameras</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/hikrobot_left_camera/rgb</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/hikrobot_right_camera/rgb&nbsp;</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">Solid-State LiDAR</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/livox/imu</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/livox/lidar</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">Mechanical LiDAR</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/velodyne_packets</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/velodyne_points</span></td>
-          </tr>
-          <tr style="height: 22.4px;">
-          <td style="width: 33.8722%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">NOKOV ground truth (part)</span></td>
-          <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/vrpn_client_node/Trackerxx/pose</span></td>
-          </tr>
-          </tbody>
-          </table>
-	</div>
+        <div id="myDiv">
+          <h2>All topics published by UGV platforms</h2>
+                  <table style="border-collapse: collapse; width: 100%; height: 1056.53px; border-color: #000000;" border="1">
+                  <tbody>
+                  <tr style="height: 26.1333px; background-color: gray; color: white;">
+                    <td style="width: 31.3318%; height: 26.1333px; text-align: center;"><span style="font-size: 14pt;"><strong>Platforms</strong></span></td>
+                    <td style="width: 33.8722%; height: 26.1333px; text-align: center;"><span style="font-size: 14pt;"><strong>Sensors</strong></span></td>
+                    <td style="width: 34.796%; height: 26.1333px; text-align: center;"><span style="font-size: 14pt;"><strong>Topics</strong></span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="height: 380.8px; width: 31.3318%; text-align: center;" rowspan="17"><span style="font-size: 14pt;"><strong>A quadruped robot/</strong></span><br /><span style="font-size: 14pt;"><strong>UGV/Handheld</strong></span></td>
+                    <td style="height: 134.4px; width: 33.8722%; text-align: center;" rowspan="6"><span style="font-size: 12pt;">Event cameras</span></td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_left/events</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/DAVIS346_left/image</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_left/imu</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/DAVIS346_right/events</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/DAVIS346_right/image</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/DAVIS346_right/imu</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 33.8722%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">IMU</span>
+                    </td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/IMU_data</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">VI-sensor</span></td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/camera/infra1/image_rect_raw</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/camera/infra2/image_rect_raw</span></td>
+                  </tr>
+                  <tr style="height: 22.4px; background-color: gray; color: white;">
+                    <td style="width: 33.8722%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">Infrared camera</span></td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/hikrobot_infrared_camera/rgb</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">RGB cameras</span></td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/hikrobot_left_camera/rgb</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/hikrobot_right_camera/rgb&nbsp;</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="height: 44.8px; width: 33.8722%; text-align: center; background-color: gray; color: white;" rowspan="2">
+                      <span style="font-size: 12pt;">Solid-State LiDAR</span>
+                    </td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/livox/imu</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/livox/lidar</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="height: 44.8px; width: 33.8722%; text-align: center;" rowspan="2"><span style="font-size: 12pt;">Mechanical LiDAR</span></td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/velodyne_packets</span></td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 34.796%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">/velodyne_points</span>
+                    </td>
+                  </tr>
+                  <tr style="height: 22.4px;">
+                    <td style="width: 33.8722%; height: 22.4px; text-align: center; background-color: gray; color: white;">
+                      <span style="font-size: 12pt;">NOKOV ground truth (part)</span>
+                    </td>
+                    <td style="width: 34.796%; height: 22.4px; text-align: center;"><span style="font-size: 12pt;">/vrpn_client_node/Trackerxx/pose</span></td>
+                  </tr>
+                  </tbody>
+                  </table>
+          </div>
 
       </div>
     </section>
