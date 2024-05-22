@@ -548,9 +548,33 @@
         <img style="width: 60%;" src="Data_Pre-process/after_merge.png" alt="Image description">
         <figcaption>Fig. 6. The Final Merged rosbag</figcaption>
       </figure>
+
+
+      <h2>5. Rosbag editor</h2>
+      <p>
+        Rosbag_editor can edit desired topics from the original ROSBAG and save them as a new rosbag. (as shown in Fig.7).
+      </p>
+
+      <div class="code-box">
+        <code>
+          makedir ws_rosbag_editor/src & cd ws_rosbag_editor/src
+          <br>
+          git clone https://github.com/facontidavide/rosbag_editor.git
+          <br>
+          cd .. & catkin_make
+          <br>
+          rosrun rosbag_editor rosbag_editor
+        </code>
+      </div>
+
+      <figure style="text-align: center;">
+        <img style="width: 60%;" src="Data_Pre-process/rosbag_editor.png" alt="Image description">
+        <figcaption>Fig. 7. Rosbag_editor</figcaption>
+      </figure>
       
-      <h2>5. GT generation</h2>
-      <h3>5.1 M3EDS-Driving-gt</h3>
+      
+      <h2>6. GT generation</h2>
+      <h3>6.1 M3EDS-Driving-gt</h3>
       <p>
 
         The ground truth of the M3EDS Driving dataset is generated in the SPAN-CPT system.
@@ -567,7 +591,7 @@
           </code>
         </div> <br>
 
-        Then  change the 'novatel_path' in "run_vehicle_path.py"  and execute (as shown in Fig.7)<br>  <br>
+        Then  change the 'novatel_path' in "run_vehicle_path.py"  and execute (as shown in Fig.8)<br>  <br>
 
         <div class="code-box">
           <code>
@@ -577,7 +601,7 @@
 
         <figure style="text-align: center;">
           <img style="width: 60%;" src="Data_Pre-process/drving gt.png" alt="Driving GT to TUM format">
-          <figcaption>Fig. 7. Driving GT to TUM format</figcaption>
+          <figcaption>Fig. 8. Driving GT to TUM format</figcaption>
         </figure> <br>
 
         You will get the truth value in TUM format, and then you can use evo tools to evaluate the algorithm performance
