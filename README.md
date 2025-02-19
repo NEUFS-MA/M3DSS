@@ -1,5 +1,5 @@
 # M3DSS
-M3DSS: A Multi-sensor, Multi-platform, Multi-scenario Dataset for SLAM Systems
+M3DSS: A Multi-platform, Multi-sensor, and Multi-scenario Dataset for SLAM System
 
 ![](https://github.com/NEUFS-MA/M3DSS/blob/main/assets/M3EDS.jpg)
 
